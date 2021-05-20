@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"time"
+)
 
 func main() {
-	fmt.Println("Hello World!!!")
+	loop := 0
+	for {
+		fmt.Printf("Hello %s, loop: %v \n", os.Getenv("MY_VARIABLE"), loop) //MY_VARIABLE is defined in .devcontainer/devcontainer.json
+		time.Sleep(time.Second * 2)
+		loop++
+	}
 }
